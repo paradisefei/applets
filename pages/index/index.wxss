@@ -121,7 +121,7 @@
 /* 排行榜中的轮播 */
 
 .rankingScroll {
-  height: 500rpx;
+  height: 400rpx;
   display: flex;
 }
 

@@ -1,8 +1,9 @@
 {
   "pages":[
-    "pages/my/index",
-    "pages/video/index",
-    "pages/index/index"
+    "pages/personal/personal",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/video/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -28,7 +29,7 @@
       {
         "iconPath": "/static/images/tabs/tab-my.png",
         "selectedIconPath": "/static/images/tabs/tab-my-current.png",
-        "pagePath": "pages/my/index",
+        "pagePath": "pages/personal/personal",
         "text": "个人中心"
       }
     ]
