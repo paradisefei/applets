@@ -1,0 +1,8 @@
+<!--component/NavBar/index.wxml-->
+<view class="eachHeader">
+  <text class="title">{{moduleTitle}}</text>
+  <view class="andMore">
+    <text class="andMoreLeft">{{leftTitle}}</text>
+    <text class="andMoreRight">查看更多</text>
+  </view>
+</view>

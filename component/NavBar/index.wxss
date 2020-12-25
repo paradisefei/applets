@@ -1,0 +1,30 @@
+/* component/NavBar/index.wxss */
+.eachHeader {
+  /* margin: 30rpx 25rpx; */
+}
+
+/*标题的说明*/
+
+.title {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 查看更多一行 */
+
+.andMore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.andMoreLeft {
+  font-size: 30rpx;
+}
+
+.andMoreRight {
+  padding: 10rpx;
+  font-size: 20rpx;
+  border-radius: 10rpx;
+  border: 1px solid black;
+}
