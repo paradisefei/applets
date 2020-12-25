@@ -1,0 +1,106 @@
+<view>
+  <!-- 轮播图
+  1.滑最后一张会回到第一张
+ -->
+  <swiper indicator-dots indicator-color="white" indicator-active-color="#d43c33" circular class="carouselContainer">
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <image src="{{item.imageUrl}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 每日推荐一栏 -->
+  <view class="iconContainer">
+    <view>
+      <text class="iconfont icon-meirituijian-"></text>
+      <text>每日推荐</text>
+    </view>
+    <view>
+      <text class="iconfont icon-gedan1"></text>
+      <text>歌单</text>
+    </view>
+    <view>
+      <text class="iconfont icon-icon-ranking"></text>
+      <text>排行榜</text>
+    </view>
+    <view>
+      <text class="iconfont icon-diantai"></text>
+      <text>电台</text>
+    </view>
+    <view>
+      <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+      <text>直播</text>
+    </view>
+  </view>
+  <!-- 推荐歌曲 -->
+  <view class="recommendContainer">
+    <view class="eachHeader">
+      <text class="title">推荐歌曲</text>
+      <view class="andMore">
+        <text class="andMoreLeft">为你精心推荐</text>
+        <text class="andMoreRight">查看更多</text>
+      </view>
+    </view>
+    <!-- 推荐歌曲中的滑动轮播部分
+          1.文字是两行，多余的文字会出现省略号
+     -->
+    <scroll-view class="recommendSwiper" scroll-x="true" enable-flex>
+      <!-- 
+        1.列表渲染
+          1.使用wx:for
+          2.data中的数据直接放入到插值语法中，渲染的是一个数组
+            1.下标就是可以直接使用index，项就是可以直接使用item
+      -->
+      <view wx:for="{{recommendSwiper}}" wx:key="id">
+        <image src="{{item.picUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 排行榜 -->
+  <view class="rankingList">
+    <view class="eachHeader">
+      <text class="title">排行榜</text>
+      <view class="andMore">
+        <text class="andMoreLeft">热歌风向标</text>
+        <text class="andMoreRight">查看更多</text>
+      </view>
+    </view>
+    <!-- 排行榜中的轮播 -->
+    <swiper class="rankingScroll" next-margin="50rpx">
+      <swiper-item class="scrollItem">
+        <text class="itemText">{{hotMusic.name}} > </text>
+        <view class="itemWithWord" wx:for="{{hotMusic.tracks}}" wx:key="id">
+          <image src="{{item.al.picUrl}}"></image>
+          <text class="itemOrder">{{index+1}}</text>
+          <text>{{item.name}}</text>
+        </view>
+      </swiper-item>
+      <swiper-item class="scrollItem">
+        <text class="itemText">{{billBoard.name}} > </text>
+        <view class="itemWithWord" wx:for="{{billBoard.tracks}}" wx:key="id">
+          <image src="{{item.al.picUrl}}"></image>
+          <text class="itemOrder">{{index+1}}</text>
+          <text>{{item.name}}</text>
+        </view>
+      </swiper-item>
+      <swiper-item class="scrollItem">
+        <text class="itemText">{{original.name}} > </text>
+        <view class="itemWithWord" wx:for="{{original.tracks}}" wx:key="id">
+          <image src="{{item.al.picUrl}}"></image>
+          <text class="itemOrder">{{index+1}}</text>
+          <text>{{item.name}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 底部导航
+    1.使用组件
+      1.定义
+      2.注册
+      3.使用
+
+    2.在全局添加tabbar的配置
+      1.引入weui库
+      2.在json文件中注册组件
+   -->
+   <mp-tabbar class="tabBar" list="{{list}}" bindchange="tabChange"></mp-tabbar>
+</view>

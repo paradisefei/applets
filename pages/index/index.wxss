@@ -1,0 +1,171 @@
+/**index.wxss**/
+
+/* banners轮播图 */
+
+/* 每日推荐栏最外层盒子 */
+
+.carouselContainer image {
+  width: 100%;
+  height: 100%;
+}
+
+.iconContainer {
+  font-size: 28rpx;
+  display: flex;
+}
+
+/* 每日推荐栏每一个盒子 */
+
+.iconContainer view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* 每日推荐栏每一个盒子中的图标字体 */
+
+.iconContainer .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 56rpx;
+  margin: 20rpx 0;
+  color: white;
+  background-color: #f01313;
+}
+
+/* 推荐歌曲 */
+
+/* 推荐歌曲的整个大盒子 */
+
+.recommendContainer {
+  margin: 30rpx 25rpx;
+}
+
+/* 推荐歌曲滑动轮播 */
+
+.recommendSwiper {
+  height: 300rpx;
+  margin: 20rpx 0;
+  display: flex;
+}
+
+.recommendSwiper view {
+  /* height: 80rpx; */
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+
+.recommendSwiper view image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.recommendSwiper view text {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  height: 80rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* 可复用的每一块的头部部分 */
+
+.eachHeader {
+  /* margin: 30rpx 25rpx; */
+}
+
+/*标题的说明*/
+
+.title {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 查看更多一行 */
+
+.andMore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.andMoreLeft {
+  font-size: 30rpx;
+}
+
+.andMoreRight {
+  padding: 10rpx;
+  font-size: 20rpx;
+  border-radius: 10rpx;
+  border: 1px solid black;
+}
+
+/* 排行榜 */
+
+/* 排行榜整个大盒子 */
+
+.rankingList {
+  margin: 30rpx 25rpx;
+}
+
+/* 排行榜中的轮播 */
+
+.rankingScroll {
+  height: 500rpx;
+  display: flex;
+}
+
+/* 轮播中的每一个竖向 */
+
+.rankingScroll .scrollItem {
+  width: 660rpx;
+  flex-shrink: 0;
+}
+
+/* 竖向上的排行榜类型文本 */
+
+.rankingScroll .itemText {
+  font-size: 28rpx;
+}
+
+/* 轮播中竖向上的每一个横向的小项 */
+
+.rankingScroll .itemWithWord {
+  /* margin-right: 400rpx; */
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.rankingScroll .itemWithWord .itemOrder {
+  display: inline-block;
+  margin: 0 40rpx;
+}
+
+.rankingScroll .itemWithWord image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+  flex-shrink: 0;
+}
+
+/* 底部导航栏 */
+
+.tabBar {
+  width: 100%;
+  height: 100rpx;
+  background-color: pink;
+  position: fixed;
+  bottom: 0;
+  font-size: 28rpx;
+}
