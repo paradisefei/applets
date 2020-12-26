@@ -5,10 +5,10 @@
 
     <view class="user-info-box">
       <view class="portrait-box" bindtap="toLogin">
-        <image class="portrait" src="/static/images/personal/missing-face.png"></image>
+        <image class="portrait" src="{{avatarUrl ? avatarUrl : '/static/images/personal/missing-face.png'}}"></image>
       </view>
       <view class="info-box" bindtap="toLogin">
-        <text class="username">游客</text>
+        <text class="username">{{nickname ? nickname : '游客'}}</text>
       </view>
     </view>
 
@@ -27,11 +27,7 @@
   </view>
 
 
-  <view class="cover-container"
-        bind:touchstart="handleTouchStart"
-        bind:touchmove="handleTouchMove"
-        bind:touchend="handleTouchEnd"
-        style="transform: translateY({{moveY}}rpx);transition: {{isTransition}}">
+  <view class="cover-container" bind:touchstart="handleTouchStart" bind:touchmove="handleTouchMove" bind:touchend="handleTouchEnd" style="transform: translateY({{moveY}}rpx);transition: {{isTransition}}">
     <image class="arc" src="/static/images/personal/arc.png"></image>
     <!-- 个人中心导航 -->
     <view class="nav-section">
@@ -53,8 +49,13 @@
       </view>
     </view>
 
-    <view class="playContent">
-      <view class="noData">暂时没有数据</view>
+    <view  class="playContent">
+      <view class="noData">最近播放</view>
+      <scroll-view  class="historyContent" scroll-x enable-flex>
+        <view class="historyItem" wx:for="{{historyList}}">
+          <image src="{{item}}"></image>
+        </view>
+      </scroll-view>
     </view>
 
     <view class="cardList">

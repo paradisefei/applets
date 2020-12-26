@@ -195,3 +195,22 @@
   float: right;
 }
 
+/* 历史记录 */
+.playContent .noData {
+  font-size: 28rpx;
+  padding-top: 30rpx; 
+  margin-left: 40rpx; 
+}
+.historyContent {
+  display: flex;
+  height: 250rpx;
+  margin: 20rpx;
+}
+.historyContent .historyItem {
+  margin-right: 20rpx;
+}
+.historyContent .historyItem image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
