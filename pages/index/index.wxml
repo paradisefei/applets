@@ -9,7 +9,7 @@
   </swiper>
   <!-- 每日推荐一栏 -->
   <view class="iconContainer">
-    <view>
+    <view bindtap="dayRecommend">
       <text class="iconfont icon-meirituijian-"></text>
       <text>每日推荐</text>
     </view>

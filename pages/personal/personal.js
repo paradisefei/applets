@@ -88,29 +88,7 @@ Page({
      * 4.历史记录是需要拿到uid再进行一次请求的
      * 5.拿到数据再去渲染
      */
-    wx.getStorage({
-      key: 'userInfo',
-      success: async (res)=>{
-        const { avatarUrl, nickname, userId } = JSON.parse(res.data);
-        console.log(res.data, avatarUrl, nickname, userId);
-        this.setData({
-          avatarUrl,
-          nickname
-        })
-        /**
-         * 1.拿到userId后去请求历史数据
-         * 2.拿到数据后对数据进行处理拿到有用的数据
-         */
-        const historyAjax = await ajax("user/record", {uid:userId,type: 1});
-        const historyUseful = historyAjax.data.weekData.map((history) => {
-          return history.song.al.picUrl;
-        })
-        this.setData({
-          historyList: historyUseful
-        })
-        console.log(historyUseful);
-      },
-    })
+
   },
 
   /**
@@ -124,7 +102,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.getStorage({
+      key: 'userInfo',
+      success: async (res) => {
+        const { avatarUrl, nickname, userId } = JSON.parse(res.data);
+        console.log(res.data, avatarUrl, nickname, userId);
+        this.setData({
+          avatarUrl,
+          nickname
+        })
+        /**
+         * 1.拿到userId后去请求历史数据
+         * 2.拿到数据后对数据进行处理拿到有用的数据
+         */
+        const historyAjax = await ajax("user/record", { uid: userId, type: 1 });
+        const historyUseful = historyAjax.data.weekData.map((history) => {
+          return history.song.al.picUrl;
+        })
+        this.setData({
+          historyList: historyUseful
+        })
+      },
+      fail: () => {
+        return;
+      }
+    })
   },
 
   /**

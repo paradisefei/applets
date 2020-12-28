@@ -17,6 +17,20 @@ Page({
      */
     ranking: []
   },
+  // 每日推荐
+  dayRecommend() {
+    /**
+     * 1.跳转到新的页面
+     *  1.navigateTo 会卸载
+     *  2.redirectTo 不会卸载，指示隐藏
+     * 2.获取数据
+     *  1.recommendSong页面挂载成功时请求数据
+     */
+    console.log("每日推荐");
+    wx.navigateTo({
+      url: '/pages/recommendSong/recommendSong'
+    })
+  },
   onReady() {
     /**
      * 1.api

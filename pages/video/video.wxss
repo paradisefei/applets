@@ -1,0 +1,119 @@
+/* 头部搜索栏 */
+.searchContainer {
+  display: flex;
+  padding: 15rpx;
+  align-items: center;
+}
+/* 搜索栏的图片 */
+.searchContainer image {
+  width: 60rpx;
+  height: 60rpx;
+}
+/* 搜索框 */
+.searchContainer .searchText {
+  margin: 0 10rpx;
+  padding: 5rpx;
+  border: 1rpx solid #666;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #444;
+  flex-grow: 1;
+}
+/* placeholder的样式 */
+.placeholderStyle {
+  color: #f00;
+  text-align: center;
+}
+/* 视频类型的盒子 */
+.videoTypeTitle {
+  height: 71rpx;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+  display: flex;
+}
+/* 每一个标题 */
+.videoTypeTitle .videoTypeItem {
+  height: 70rpx;
+  margin: 0 10rpx;
+  /* border: 1px solid black; */
+  flex-shrink: 0;
+}
+.active {
+  border-bottom: 1px solid red;
+}
+
+/* 视频 */
+.videoList .common {
+  width: 100%;
+  height: 52.875vw;
+  border-radius: 10rpx;
+}
+
+.videoList .videoItem{
+  padding:3%;
+  padding-bottom:0;
+}
+
+
+.videoList{
+  padding-top:40rpx;
+}
+
+.videoList .content {
+  font-size: 26rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  max-width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* footer */
+.footer {
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+.footer .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.footer  .nickName {
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.footer .comments_praised {
+  float: right;
+}
+.comments_praised .btn {
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.comments_praised .btn:after {
+  border: none;
+}
+
+.comments_praised .item {
+  margin-left: 50rpx;
+  position: relative;
+}
+
+.comments_praised .item .count {
+  position: absolute;
+  top: -20rpx;
+  font-size: 20rpx;
+}
+/* 没有点击的时候显示图片标签 */
+.showImage {
+  width: 100%;
+  height: 52.875vw;
+  border-radius: 10rpx;
+}

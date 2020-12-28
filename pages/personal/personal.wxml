@@ -28,7 +28,7 @@
 
 
   <view class="cover-container" bind:touchstart="handleTouchStart" bind:touchmove="handleTouchMove" bind:touchend="handleTouchEnd" style="transform: translateY({{moveY}}rpx);transition: {{isTransition}}">
-    <image class="arc" src="/static/images/personal/arc.png"></image>
+    <image class="arc" src="/static/images/personal/arc.png" lazy-load></image>
     <!-- 个人中心导航 -->
     <view class="nav-section">
       <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
@@ -52,7 +52,7 @@
     <view  class="playContent">
       <view class="noData">最近播放</view>
       <scroll-view  class="historyContent" scroll-x enable-flex>
-        <view class="historyItem" wx:for="{{historyList}}">
+        <view class="historyItem" wx:for="{{historyList}}" wx:key="id">
           <image src="{{item}}"></image>
         </view>
       </scroll-view>

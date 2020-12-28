@@ -1,29 +1,34 @@
 {
-  "pages":[
+  "pages": [
+    "pages/recommendSong/recommendSong",
+    "pages/index/index",
+    "pages/video/video",
     "pages/personal/personal",
     "pages/login/login",
-    "pages/index/index",
-    "pages/video/index"
+    "pages/play/play"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#d43c33",
-    "navigationBarTitleText": "硅谷音乐",
-    "navigationBarTextStyle":"white"
+    "navigationBarTitleText": "硅谷云音乐",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "selectedColor":"#fa436a",
+    "selectedColor": "#fa436a",
     "list": [
       {
-        "iconPath":"/static/images/tabs/tab-home.png",
-        "selectedIconPath":"/static/images/tabs/tab-home-current.png",
+        "iconPath": "/static/images/tabs/tab-home.png",
+        "selectedIconPath": "/static/images/tabs/tab-home-current.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
         "iconPath": "/static/images/tabs/select.png",
         "selectedIconPath": "/static/images/tabs/selected.png",
-        "pagePath": "pages/video/index",
+        "pagePath": "pages/video/video",
         "text": "视频"
       },
       {

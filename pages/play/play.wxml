@@ -1,0 +1,26 @@
+<view class="playContainer">
+  <!-- 导航栏的名称 -->
+  <!-- 歌手 -->
+  <text>{{songDetail.ar[0].name}}</text>
+  <!-- 指针
+    1.图片
+   -->
+  <view class="needle">
+    <text class="whiteBall"></text>
+    <image src="/static/images/song/needle.png" class="needleImg {{isPlaying ? 'isPlayingDisc' : ''}}"></image>
+  </view>
+  <!-- 转盘 -->
+  <view class="discContainer {{isPlaying ? 'isPlayingPad' : ''}}">
+    <image src="/static/images/song/disc.png" class="disc"></image>
+    <image src="{{songDetail.al.picUrl}}" class="songPic"></image>
+  </view>
+  
+  <!-- 底部播放选项区域 -->
+  <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+    <text class="iconfont icon-shangyishou" bindtap="switchSong" id="pre"></text>
+    <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}} big" bindtap="handlePlay"></text>
+    <text class="iconfont icon-next" bindtap="switchSong" id="next"></text>
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+  </view>
+</view>

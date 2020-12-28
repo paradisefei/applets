@@ -3,6 +3,9 @@
   2.轮播图
   3.底部导航栏
     1.全局配置tabBar
+  4.视频页
+  5.每日推荐
+  6.点击播放
 */ 
 //app.js
 App({
@@ -40,6 +43,7 @@ App({
     })
   },
   globalData: {
+    songId: null,
     userInfo: null
   }
 })

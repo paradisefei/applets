@@ -1,0 +1,109 @@
+<view class="videoContainer">
+  <!-- 头部搜索栏 -->
+  <view class="searchContainer">
+    <image src="/static/images/video/video.jpg"></image>
+    <!-- 
+        placeholder的样式
+          1.颜色
+       -->
+    <input class="searchText" placeholder="光辉岁月" placeholder-class="placeholderStyle">111</input>
+    <image src="/static/images/logo.png"></image>
+  </view>
+  <!-- 
+    可滑动的小标题
+        1.先显示成横向可滑动的
+        2.点击哪一个，哪一个的就加一个active的样式，其他人的active的样式就没掉
+            1.先看下有没有直接可以使用的
+            2.active是动态的
+              1.小程序中如何实现动态加载某个类名
+              2.定义一个指示选中title的变量，然后进行比较
+              3.挂载成功是selectedId为第一个元素的id
+              4.被选中的放在第一个
+                1.scroll-into-view要使用data中的变量，必须是响应式的
+                2.移动的时候不要这么突然
+   -->
+  <scroll-view 
+  class="videoTypeTitle" 
+  scroll-x enable-flex 
+  enhanced
+  bindtap="handleAddActive"
+  scroll-into-view="selected{{selectedId}}"
+  scroll-with-animation
+  >
+    <view 
+    class="videoTypeItem {{selectedId === item.id ? 'active' : ''}}" 
+    bindtap="getVideoTest" 
+    wx:for="{{videoTitleList}}" 
+    wx:key="id"
+    data-id="{{item.id}}"
+    id="selected{{item.id}}"
+    >
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <!-- 视频 -->
+  <!-- videoList区域 -->
+  <scroll-view 
+  class="videoList" 
+  scroll-y
+  refresher-enabled
+  refresher-triggered="{{isGettingVideo}}"
+  bindrefresherpulling="handleDragStart"
+  >
+    <view class="videoItem" wx:for="{{videoList}}" wx:key="vid">
+    <!-- 
+      1.视频无法播放
+      2.显示一张海报
+      3.一次只能播放一个视频
+      4.性能优化
+        1.在没有点击视频时，这个区域渲染的是图片标签
+        2.点击之后，这一个就变成了video标签
+        3.显示隐藏
+          1.定义变量，点击时修改该变量，相等时显示video；不相等时显示image
+          2.video
+     -->
+     
+      <image src="{{item.coverUrl}}" 
+      wx:if="{{showVideo != item.vid}}" 
+      class="showImage"
+      bindtap="showVideo"
+      data-id="{{item.vid}}"
+      ></image>
+      <video
+      id="{{item.vid}}"
+      src="{{item.urlInfo.url}}"
+      class="common"
+      controls
+      object-fit="contain"
+      poster="{{item.coverUrl}}"
+      bindplay="handlePlay"
+      wx:else
+      ></video>
+      <view class="content">{{item.title}}</view>
+      <view class="footer">
+        <image class="avatar" src="{{item.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+          <text class="count">{{item.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+          <text class="count">{{item.commentCount}}</text>
+          </text>
+          <!--
+            1.分享的卡片的内容
+          -->
+          <button class="item btn"
+          open-type="share"
+          data-imageUrl="{{item.coverUrl}}"
+          data-title="{{item.title}}"
+          >
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -118,10 +118,24 @@ Page({
         /**
          * 1.功能成功
          * 2.保存数据到storage中
+         * 3.返回的cookies中，有用的那个cookie不一定是确定的在数组中的某个位置的
          */
+        
+        console.log(res, res.data.profile);
         wx.setStorage({
           key: 'userInfo',
           data: JSON.stringify(res.data.profile)
+        })
+        const cookie = res.cookies.find((cookie) => {
+          if(cookie.startsWith("MUSIC_U")){
+            return true;
+          }
+        });
+        // console.log(cookie);
+        // 把cookies保存到storage中
+        wx.setStorage({
+          key: 'cookie',
+          data: JSON.stringify(cookie)
         })
       }else{
         wx.showToast({
@@ -130,9 +144,9 @@ Page({
         })
         return;
       }
-      console.log(res);
+      // console.log(res);
       wx.switchTab({
-        url: '../personal/personal'
+        url: '/pages/personal/personal'
       })
     })
   },
