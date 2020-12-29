@@ -2,8 +2,8 @@
   <view class="header">
     <image src="/static/images/recommendSong/recommendSong.jpg"></image>
     <view class="date">
-      <text class="day">27 /</text>
-      <text class="month">12</text>
+      <text class="day">{{day}} /</text>
+      <text class="month">{{month}}</text>
     </view>
   </view>
 

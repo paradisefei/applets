@@ -8,7 +8,9 @@ Page({
    */
   data: {
     recommentSongList:[],
-    index: ''
+    index: '',
+    month: 1,
+    day: 1
   },
   // 点击去到播放界面
   toPlay(event) {
@@ -42,6 +44,14 @@ Page({
      * 2.赋值
      * 3.绑定pubsub的接收
      */
+    const date = new Date;
+
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    this.setData({
+      month,
+      day
+    })
     let recommentSongList = await ajax("recommend/songs");
     if (recommentSongList.data.code === 200) {
       recommentSongList = recommentSongList.data.recommend.map((song) => {

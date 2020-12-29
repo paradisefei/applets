@@ -14,7 +14,23 @@
     <image src="/static/images/song/disc.png" class="disc"></image>
     <image src="{{songDetail.al.picUrl}}" class="songPic"></image>
   </view>
-  
+<!-- 进度条 -->
+<view class="progress">
+  <!-- 左边时间 -->
+  <text class="left">{{playedTime}}</text>
+  <!-- 中间进度条
+    1.整条
+    2.已播放
+    3.小球
+   -->
+   <view class="totalLength">
+    <view class="playedLength" style="width: {{playedPercent+'%'}}">
+      <text class="whiteBall" style="left: 100%;"></text>
+    </view>
+   </view>
+  <!-- 右边总时间 -->
+  <text class="right">{{totalTime}}</text>
+</view>
   <!-- 底部播放选项区域 -->
   <view class="musicControl">
     <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
