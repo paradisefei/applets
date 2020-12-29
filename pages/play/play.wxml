@@ -18,9 +18,9 @@
   <!-- 底部播放选项区域 -->
   <view class="musicControl">
     <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
-    <text class="iconfont icon-shangyishou" bindtap="switchSong" id="pre"></text>
+    <text class="iconfont icon-shangyishou" bindtap="switchPrev" id="pre"></text>
     <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}} big" bindtap="handlePlay"></text>
-    <text class="iconfont icon-next" bindtap="switchSong" id="next"></text>
+    <text class="iconfont icon-next" bindtap="switchNext" id="next"></text>
     <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
   </view>
 </view>

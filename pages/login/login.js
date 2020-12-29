@@ -28,7 +28,7 @@ Page({
      *    1.拿到自定义属属性
      *    2.拿到输入的数据
      */
-    const type = event.target.dataset.type;
+    const type = event.currentTarget.dataset.type;
     const value = event.detail.value;
     this.setData({
       [type]: value

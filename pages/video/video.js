@@ -37,7 +37,7 @@ Page({
      * 2.变成video后直接播放
      */
     // console.log(event.target.dataset.id, this.id);
-    this.vid = event.target.dataset.id;
+    this.vid = event.currentTarget.dataset.id;
     this.setData({
       showVideo: this.vid
     })
@@ -90,7 +90,7 @@ Page({
     })
     this.setData({
       videoList:[],
-      selectedId: event.target.dataset.id
+      selectedId: event.currentTarget.dataset.id
     })
     const videoList = await this.getVideoList();
     this.setData({
